@@ -63,16 +63,11 @@
             color: #27ae60;
         }
 
-        /* Hero Section - FIXED with multiple fallbacks */
+        /* Hero Section */
         .hero {
-            background: 
-                linear-gradient(rgba(39, 174, 96, 0.8), rgba(39, 174, 96, 0.8)),
-                url('./images/hero-background.jpg'),
-                url('images/hero-background.jpg'),
-                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(39, 174, 96, 0.8), rgba(39, 174, 96, 0.8)), url('images/hero-background.jpg');
             background-size: cover;
             background-position: center;
-            background-color: #27ae60; /* Fallback color */
             height: 100vh;
             display: flex;
             align-items: center;
@@ -143,7 +138,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        /* FIXED Service Icons with fallbacks */
         .service-icon {
             width: 80px;
             height: 80px;
@@ -155,51 +149,6 @@
             justify-content: center;
             font-size: 2rem;
             color: white;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Individual service backgrounds with fallbacks */
-        .service-icon.property-mgmt {
-            background-image: 
-                url('./images/property-management.jpg'),
-                url('images/property-management.jpg'),
-                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
-        }
-
-        .service-icon.intl-students {
-            background-image: 
-                url('./images/international-students.jpg'),
-                url('images/international-students.jpg'),
-                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
-        }
-
-        .service-icon.hmo {
-            background-image: 
-                url('./images/hmo-services.jpg'),
-                url('images/hmo-services.jpg'),
-                url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
-        }
-
-        .service-icon.guaranteed {
-            background-image: 
-                url('./images/guaranteed-rent.jpg'),
-                url('images/guaranteed-rent.jpg'),
-                url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
-        }
-
-        .service-icon.cleaning {
-            background-image: 
-                url('./images/cleaning-services.jpg'),
-                url('images/cleaning-services.jpg'),
-                url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
-        }
-
-        .service-icon.tenants {
-            background-image: 
-                url('./images/tenant-services.jpg'),
-                url('images/tenant-services.jpg'),
-                url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
 
         .service-card h3 {
@@ -413,18 +362,6 @@
             margin-right: 1rem;
             flex-shrink: 0;
         }
-
-        /* Error handling for images */
-        .image-error {
-            background: #f8f9fa !important;
-            border: 2px dashed #ccc !important;
-        }
-
-        .image-error::after {
-            content: "Image not found";
-            font-size: 0.8rem;
-            color: #666;
-        }
     </style>
 </head>
 <body>
@@ -465,32 +402,32 @@
             
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon property-mgmt">🏠</div>
+                    <div class="service-icon" style="background-image: url('images/property-management.jpg'); background-size: cover;">🏠</div>
                     <h3>Property Management</h3>
                     <p>Complete property management from tenant sourcing to maintenance, inspections, and compliance. We handle it all so you can focus on what matters most.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon intl-students">🎓</div>
+                    <div class="service-icon" style="background-image: url('images/international-students.jpg'); background-size: cover;">🎓</div>
                     <h3>International Students</h3>
                     <p>Specialized accommodation services for international students including airport pickup, housing arrangements, and full support for your UK transition.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon hmo">🏘️</div>
+                    <div class="service-icon" style="background-image: url('images/hmo-services.jpg'); background-size: cover;">🏘️</div>
                     <h3>HMO Services</h3>
                     <p>Expert HMO management with full compliance assurance, attractive staging, tenant vetting, and comprehensive maintenance support.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon guaranteed">💰</div>
+                    <div class="service-icon" style="background-image: url('images/guaranteed-rent.jpg'); background-size: cover;">💰</div>
                     <h3>Guaranteed Rent</h3>
                     <p>Enjoy stress-free income with our guaranteed monthly rent program. Fixed income every month, regardless of vacancy periods.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon cleaning">✨</div>
+                    <div class="service-icon" style="background-image: url('images/cleaning-services.jpg'); background-size: cover;">✨</div>
                     <h3>Cleaning Services</h3>
                     <p>Professional end-of-tenancy and post-construction cleaning services to ensure your property is pristine and ready for new occupants.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon tenants">👥</div>
+                    <div class="service-icon" style="background-image: url('images/tenant-services.jpg'); background-size: cover;">👥</div>
                     <h3>Tenant Services</h3>
                     <p>Hassle-free renting experience with all-inclusive bills, thorough tenant screening, and ongoing support throughout your tenancy.</p>
                 </div>
@@ -630,10 +567,7 @@
                     <p>We pride ourselves on our attention to detail, excellent customer service, and comprehensive support throughout your property journey. Trust GABID REALCOMFORT LTD to be your reliable property partner.</p>
                 </div>
                 <div class="about-image">
-                    <img src="./images/about-us.jpg" 
-                         alt="GABID REALCOMFORT Team" 
-                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;"
-                         onerror="this.src='https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <img src="images/about-us.jpg" alt="GABID REALCOMFORT Team" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
                 </div>
             </div>
         </div>
@@ -734,16 +668,6 @@
             } else {
                 header.style.background = '#2c3e50';
             }
-        });
-
-        // Image error handling
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if background images loaded for service icons
-            const serviceIcons = document.querySelectorAll('.service-icon');
-            serviceIcons.forEach(icon => {
-                // If background image fails, the fallback images will be used automatically
-                // due to the multiple URL fallbacks in CSS
-            });
         });
     </script>
 </body>
