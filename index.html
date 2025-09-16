@@ -63,22 +63,21 @@
             color: #27ae60;
         }
 
-        /* Hero Section - FIXED */
+        /* Hero Section - FIXED with multiple fallbacks */
         .hero {
-            background: linear-gradient(rgba(39, 174, 96, 0.8), rgba(39, 174, 96, 0.8)), 
-                        url('./images/hero-background.jpg');
+            background: 
+                linear-gradient(rgba(39, 174, 96, 0.8), rgba(39, 174, 96, 0.8)),
+                url('./images/hero-background.jpg'),
+                url('images/hero-background.jpg'),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
+            background-color: #27ae60; /* Fallback color */
             height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
-        }
-
-        /* Fallback if image doesn't load */
-        .hero {
-            background-color: #27ae60;
         }
 
         .hero-content h1 {
@@ -144,7 +143,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        /* FIXED Service Icons */
+        /* FIXED Service Icons with fallbacks */
         .service-icon {
             width: 80px;
             height: 80px;
@@ -160,29 +159,47 @@
             background-position: center;
         }
 
-        /* Specific service icon backgrounds */
+        /* Individual service backgrounds with fallbacks */
         .service-icon.property-mgmt {
-            background-image: url('./images/property-management.jpg');
+            background-image: 
+                url('./images/property-management.jpg'),
+                url('images/property-management.jpg'),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-        
-        .service-icon.international-students {
-            background-image: url('./images/international-students.jpg');
+
+        .service-icon.intl-students {
+            background-image: 
+                url('./images/international-students.jpg'),
+                url('images/international-students.jpg'),
+                url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-        
-        .service-icon.hmo-services {
-            background-image: url('./images/hmo-services.jpg');
+
+        .service-icon.hmo {
+            background-image: 
+                url('./images/hmo-services.jpg'),
+                url('images/hmo-services.jpg'),
+                url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-        
-        .service-icon.guaranteed-rent {
-            background-image: url('./images/guaranteed-rent.jpg');
+
+        .service-icon.guaranteed {
+            background-image: 
+                url('./images/guaranteed-rent.jpg'),
+                url('images/guaranteed-rent.jpg'),
+                url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-        
+
         .service-icon.cleaning {
-            background-image: url('./images/cleaning-services.jpg');
+            background-image: 
+                url('./images/cleaning-services.jpg'),
+                url('images/cleaning-services.jpg'),
+                url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-        
-        .service-icon.tenant-services {
-            background-image: url('./images/tenant-services.jpg');
+
+        .service-icon.tenants {
+            background-image: 
+                url('./images/tenant-services.jpg'),
+                url('images/tenant-services.jpg'),
+                url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
 
         .service-card h3 {
@@ -318,6 +335,96 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Detailed Service Sections */
+        .service-detail {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-detail:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .service-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .service-detail h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .service-detail h4 {
+            color: #27ae60;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .service-detail ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-detail ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-detail ul li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .process-steps {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .step-number {
+            background: #27ae60;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Error handling for images */
+        .image-error {
+            background: #f8f9fa !important;
+            border: 2px dashed #ccc !important;
+        }
+
+        .image-error::after {
+            content: "Image not found";
+            font-size: 0.8rem;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -354,38 +461,159 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">At GABID REALCOMFORT LTD, we specialize in delivering property solutions that make finding the right home easy, affordable, and secure.</p>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">At GABID REALCOMFORT LTD, we specialize in delivering property solutions that make finding the right home easy, affordable, and secure. We're passionate about helping students and working professionals find the ideal property in the best locations at unbeatable prices.</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon property-mgmt">🏠</div>
                     <h3>Property Management</h3>
-                    <p>Complete property management from tenant sourcing to maintenance, inspections, and compliance.</p>
+                    <p>Complete property management from tenant sourcing to maintenance, inspections, and compliance. We handle it all so you can focus on what matters most.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon international-students">🎓</div>
+                    <div class="service-icon intl-students">🎓</div>
                     <h3>International Students</h3>
-                    <p>Specialized accommodation services for international students including airport pickup and housing arrangements.</p>
+                    <p>Specialized accommodation services for international students including airport pickup, housing arrangements, and full support for your UK transition.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon hmo-services">🏘️</div>
+                    <div class="service-icon hmo">🏘️</div>
                     <h3>HMO Services</h3>
-                    <p>Expert HMO management with full compliance assurance, attractive staging, and comprehensive maintenance.</p>
+                    <p>Expert HMO management with full compliance assurance, attractive staging, tenant vetting, and comprehensive maintenance support.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon guaranteed-rent">💰</div>
+                    <div class="service-icon guaranteed">💰</div>
                     <h3>Guaranteed Rent</h3>
-                    <p>Enjoy stress-free income with our guaranteed monthly rent program.</p>
+                    <p>Enjoy stress-free income with our guaranteed monthly rent program. Fixed income every month, regardless of vacancy periods.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon cleaning">✨</div>
                     <h3>Cleaning Services</h3>
-                    <p>Professional end-of-tenancy and post-construction cleaning services.</p>
+                    <p>Professional end-of-tenancy and post-construction cleaning services to ensure your property is pristine and ready for new occupants.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon tenant-services">👥</div>
+                    <div class="service-icon tenants">👥</div>
                     <h3>Tenant Services</h3>
-                    <p>Hassle-free renting experience with all-inclusive bills and ongoing support.</p>
+                    <p>Hassle-free renting experience with all-inclusive bills, thorough tenant screening, and ongoing support throughout your tenancy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tenants Section -->
+    <section id="tenants" class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div>
+                    <h3>Tenants</h3>
+                    <h4>A Hassle-Free Renting Experience Tailored to Your Needs</h4>
+                    <p>As housing costs rise, more young professionals and students are discovering the benefits of shared accommodations. With shared living, you can save money while enjoying a balanced lifestyle, ensuring you still have room in your budget for the things you love.</p>
+                </div>
+                <div class="process-steps">
+                    <h4>What's Included?</h4>
+                    <ul>
+                        <li>All essential bills included: gas, electricity, broadband, council tax, and TV license</li>
+                        <li>Everything set up and ready when you move in</li>
+                        <li>Comfortable, friendly environment with like-minded housemates</li>
+                        <li>Thorough screening of all applicants</li>
+                        <li>Professional and creative individuals</li>
+                    </ul>
+
+                    <h4>Peace of Mind Guaranteed</h4>
+                    <p>As members of the National Residential Landlords Association, registered with the ICO, accredited by Rent Smart Wales, and with all deposits protected under The DPS, you can rent from us with total confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Management Section -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div>
+                    <h3>Property Management</h3>
+                    <h4>Expert Property Management Services</h4>
+                    <p>Trust, Care, and Complete Peace of Mind. We're dedicated to making property ownership stress-free and profitable. We specialize in residential and HMO properties and offer comprehensive property management.</p>
+                </div>
+                <div class="process-steps">
+                    <h4>What's Included in Our Fully Managed Services:</h4>
+                    <ul>
+                        <li>Property Marketing across all major platforms</li>
+                        <li>Tenant Sourcing with thorough background checks</li>
+                        <li>24/7 Maintenance with dedicated emergency service</li>
+                        <li>Compliance and Documentation management</li>
+                        <li>Regular Inspections and spot-checks</li>
+                        <li>Financial Management and rent collection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Students Section -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div>
+                    <h3>International Students</h3>
+                    <h4>Finding a Home in the UK: Easy and Secure</h4>
+                    <p>Embarking on your studies in the UK is thrilling, and we make finding your home easy, comfortable, and secure. Our accommodation services ensure that from the moment you arrive, your housing needs are fully covered.</p>
+                </div>
+                <div class="process-steps">
+                    <h4>Specialized Services:</h4>
+                    <ul>
+                        <li>Airport Pickup from any UK airport</li>
+                        <li>Confirmed Housing Arrangements before arrival</li>
+                        <li>National Insurance Number (NI) Assistance</li>
+                        <li>Help Registering with a GP (Doctor)</li>
+                        <li>Bank Account Setup Support</li>
+                        <li>Organized Utilities and Amenities</li>
+                        <li>Ongoing Support throughout your studies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guaranteed Rent Section -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div>
+                    <h3>Guaranteed Rent</h3>
+                    <h4>Enjoy Stress-Free Income on Your Property, Every Month</h4>
+                    <p>Are you a landlord looking for secure, consistent rental income? We lease your property directly, becoming your tenant and ensuring you a fixed rental income every month.</p>
+                </div>
+                <div class="process-steps">
+                    <h4>Our 5-Step Process:</h4>
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <strong>Property Viewing:</strong> We arrange to view your property and agree on a fixed monthly rental amount.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <strong>Agreement Signing:</strong> We finalize a legally binding contract, drawn up by our expert solicitors.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <strong>Property Setup:</strong> We handle upgrades, find tenants, and take over full property management.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <strong>Monthly Income:</strong> You start receiving guaranteed rent each month, hassle-free.
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div>
+                            <strong>Contract Options:</strong> Renew, receive property back improved, or explore purchase options.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -397,11 +625,15 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>About GABID REALCOMFORT LTD</h2>
-                    <p>We are a leading property management company dedicated to providing exceptional service to both landlords and tenants.</p>
-                    <p>Our team of experts is committed to delivering personalized solutions that meet your unique needs.</p>
+                    <p>We are a leading property management company dedicated to providing exceptional service to both landlords and tenants. With years of experience in the property market, we understand the importance of finding the right home and managing properties efficiently.</p>
+                    <p>Our team of experts is committed to delivering personalized solutions that meet your unique needs. Whether you're a landlord looking for reliable property management or a tenant searching for the perfect home, we're here to help every step of the way.</p>
+                    <p>We pride ourselves on our attention to detail, excellent customer service, and comprehensive support throughout your property journey. Trust GABID REALCOMFORT LTD to be your reliable property partner.</p>
                 </div>
                 <div class="about-image">
-                    <img src="./images/about-us.jpg" alt="GABID REALCOMFORT Team" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+                    <img src="./images/about-us.jpg" 
+                         alt="GABID REALCOMFORT Team" 
+                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;"
+                         onerror="this.src='https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
                 </div>
             </div>
         </div>
@@ -417,6 +649,16 @@
                     <p><strong>Address:</strong><br>1a Highfield Road, Dartford<br>Highfield Road Dartford DA1 2JH</p>
                     <p><strong>Phone:</strong><br>07985468676</p>
                     <p><strong>Email:</strong><br>info@gabidrealcomfort.com</p>
+                    
+                    <h3 style="margin-top: 2rem;">Our Services Include:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.3rem 0;">✓ Property Management</li>
+                        <li style="padding: 0.3rem 0;">✓ International Students Support</li>
+                        <li style="padding: 0.3rem 0;">✓ HMO Services</li>
+                        <li style="padding: 0.3rem 0;">✓ Guaranteed Rent Programs</li>
+                        <li style="padding: 0.3rem 0;">✓ Professional Cleaning Services</li>
+                        <li style="padding: 0.3rem 0;">✓ Tenant Support Services</li>
+                    </ul>
                 </div>
                 <div class="contact-form">
                     <h3>Send us a message</h3>
@@ -428,6 +670,22 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" style="width: 100%; padding: 10px; border: none; border-radius: 5px; background: rgba(255,255,255,0.9);">
+                                <option value="">Select a service</option>
+                                <option value="property-management">Property Management</option>
+                                <option value="international-students">International Students</option>
+                                <option value="hmo-services">HMO Services</option>
+                                <option value="guaranteed-rent">Guaranteed Rent</option>
+                                <option value="cleaning">Cleaning Services</option>
+                                <option value="tenant-services">Tenant Services</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
@@ -443,7 +701,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 GABID REALCOMFORT LTD. All rights reserved.</p>
+            <p>&copy; 2024 GABID REALCOMFORT LTD. All rights reserved. | Professional Property Management Services</p>
         </div>
     </footer>
 
@@ -466,6 +724,26 @@
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(44, 62, 80, 0.95)';
+            } else {
+                header.style.background = '#2c3e50';
+            }
+        });
+
+        // Image error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if background images loaded for service icons
+            const serviceIcons = document.querySelectorAll('.service-icon');
+            serviceIcons.forEach(icon => {
+                // If background image fails, the fallback images will be used automatically
+                // due to the multiple URL fallbacks in CSS
+            });
         });
     </script>
 </body>
