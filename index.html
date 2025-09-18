@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>GABID REALCOMFORT LTD - Your Trusted Property Partner</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,11 +13,7 @@
             color: #333;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* Header */
         header {
@@ -30,49 +22,27 @@
             padding: 1rem 0;
             position: fixed;
             width: 100%;
-            top: 0;
-            z-index: 1000;
+            top: 0; z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #27ae60; }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #27ae60;
-        }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav a { color: white; text-decoration: none; transition: color 0.3s; }
+        nav a:hover { color: #27ae60; }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #27ae60;
-        }
-
-        /* Hero Section - FIXED with multiple fallbacks */
+        /* Hero (with fallbacks) */
         .hero {
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            background:
+                linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
                 url('./images/hero-background.jpg'),
                 url('images/hero-background.jpg'),
                 url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
-            background-color: #27ae60; /* Fallback color */
+            background-color: #27ae60;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -80,346 +50,127 @@
             color: white;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
 
         .cta-button {
-            background: #e74c3c;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-            display: inline-block;
+            background: #e74c3c; color: white; padding: 15px 30px; text-decoration: none;
+            border-radius: 5px; font-size: 1.1rem; transition: background 0.3s; display: inline-block;
         }
-
-        .cta-button:hover {
-            background: #c0392b;
-        }
+        .cta-button:hover { background: #c0392b; }
 
         /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-
+        .services { padding: 80px 0; background: #f8f9fa; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #2c3e50; }
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 3rem; margin-top: 3rem;
         }
 
-        /* UPDATED: Clickable service cards */
-        .service-card-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
+        .service-card-link { text-decoration: none; color: inherit; display: block; }
         .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
+            background: white; padding: 2rem; border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            cursor: pointer;
+            transition: transform .3s, box-shadow .3s;
+            text-align: center; cursor: pointer;
         }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        /* FIXED Service Icons with fallbacks */
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: #27ae60;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            background-size: cover;
-            background-position: center;
+            width: 80px; height: 80px; background: #27ae60; border-radius: 50%;
+            margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: white; background-size: cover; background-position: center;
         }
 
-        /* Individual service backgrounds using your actual image files */
+        /* Service icons (circle) */
         .service-icon.property-mgmt {
-            background-image: 
+            background-image:
                 url('./images/property-1.jpg'),
                 url('images/property-1.jpg'),
                 url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-
         .service-icon.intl-students {
-            background-image: 
+            background-image:
                 url('./images/property-2.jpg'),
                 url('images/property-2.jpg'),
                 url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-
         .service-icon.hmo {
-            background-image: 
+            background-image:
                 url('./images/property-3.jpg'),
                 url('images/property-3.jpg'),
                 url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-
         .service-icon.guaranteed {
-            background-image: 
+            background-image:
                 url('./images/property-4.jpg'),
                 url('images/property-4.jpg'),
                 url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-
         .service-icon.cleaning {
-            background-image: 
+            background-image:
                 url('./images/property-7.jpg'),
                 url('images/property-7.jpg'),
                 url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
-
         .service-icon.tenants {
-            background-image: 
+            background-image:
                 url('./images/property-6.jpg'),
                 url('images/property-6.jpg'),
                 url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80');
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #2c3e50; }
+        .service-card p { color: #666; line-height: 1.6; }
 
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
+        /* About */
+        .about { padding: 80px 0; background: white; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #2c3e50; }
+        .about-text p { font-size: 1.1rem; color: #666; margin-bottom: 1.5rem; }
+        .about-image { text-align: center; }
+        .about-image img { max-width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: white;
+        /* Contact */
+        .contact { padding: 80px 0; background: #2c3e50; color: white; }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #27ae60; }
+        .contact-info p { margin-bottom: 1rem; }
+        .contact-form { background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: .5rem; color: #27ae60; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 10px; border: none; border-radius: 5px; background: rgba(255,255,255,0.9);
         }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: #2c3e50;
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #27ae60;
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-        }
-
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #27ae60;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background: rgba(255,255,255,0.9);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
+        .form-group textarea { height: 120px; resize: vertical; }
 
         /* Footer */
-        footer {
-            background: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
+        footer { background: #1a252f; color: white; text-align: center; padding: 2rem 0; }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+            .header-content { flex-direction: column; gap: 1rem; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-content, .contact-content { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
         }
 
         /* Detailed Service Sections */
-        .service-detail {
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
-        }
+        .service-detail { padding: 60px 0; border-bottom: 1px solid #eee; scroll-margin-top: 100px; }
+        .service-detail:nth-child(even) { background: #f8f9fa; }
+        .service-detail-content { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+        .service-detail h3 { font-size: 2rem; color: #2c3e50; margin-bottom: 1rem; }
+        .service-detail h4 { color: #27ae60; margin: 1.5rem 0 1rem; font-size: 1.3rem; }
+        .service-detail ul { list-style-type: none; padding-left: 0; }
+        .service-detail ul li { padding: .5rem 0; padding-left: 1.5rem; position: relative; }
+        .service-detail ul li:before { content: "✓"; color: #27ae60; font-weight: bold; position: absolute; left: 0; }
 
-        .service-detail:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .service-detail-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .service-detail h3 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .service-detail h4 {
-            color: #27ae60;
-            margin: 1.5rem 0 1rem 0;
-            font-size: 1.3rem;
-        }
-
-        .service-detail ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .service-detail ul li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .service-detail ul li:before {
-            content: "✓";
-            color: #27ae60;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .process-steps {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .step {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
+        .process-steps { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .step { display: flex; align-items: center; margin-bottom: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; }
         .step-number {
-            background: #27ae60;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 1rem;
-            flex-shrink: 0;
+            background: #27ae60; color: white; width: 30px; height: 30px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 1rem; flex-shrink: 0;
         }
     </style>
 </head>
@@ -442,7 +193,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -457,8 +208,10 @@
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">At GABID REALCOMFORT LTD, we specialize in delivering property solutions that make finding the right home easy, affordable, and secure. We're passionate about helping students and working professionals find the ideal property in the best locations at unbeatable prices.</p>
-            
+            <p style="text-align:center; font-size:1.2rem; color:#666; max-width:800px; margin:0 auto;">
+                At GABID REALCOMFORT LTD, we specialize in delivering property solutions that make finding the right home easy, affordable, and secure. We're passionate about helping students and working professionals find the ideal property in the best locations at unbeatable prices.
+            </p>
+
             <div class="services-grid">
                 <a href="#property-management" class="service-card-link">
                     <div class="service-card">
@@ -467,7 +220,7 @@
                         <p>Complete property management from tenant sourcing to maintenance, inspections, and compliance. We handle it all so you can focus on what matters most.</p>
                     </div>
                 </a>
-                
+
                 <a href="#international-students" class="service-card-link">
                     <div class="service-card">
                         <div class="service-icon intl-students"></div>
@@ -475,7 +228,7 @@
                         <p>Specialized accommodation services for international students including airport pickup, housing arrangements, and full support for your UK transition.</p>
                     </div>
                 </a>
-                
+
                 <a href="#hmo-services" class="service-card-link">
                     <div class="service-card">
                         <div class="service-icon hmo"></div>
@@ -483,7 +236,7 @@
                         <p>Expert HMO management with full compliance assurance, attractive staging, tenant vetting, and comprehensive maintenance support.</p>
                     </div>
                 </a>
-                
+
                 <a href="#guaranteed-rent" class="service-card-link">
                     <div class="service-card">
                         <div class="service-icon guaranteed"></div>
@@ -491,7 +244,7 @@
                         <p>Enjoy stress-free income with our guaranteed monthly rent program. Fixed income every month, regardless of vacancy periods.</p>
                     </div>
                 </a>
-                
+
                 <a href="#cleaning-services" class="service-card-link">
                     <div class="service-card">
                         <div class="service-icon cleaning"></div>
@@ -499,7 +252,7 @@
                         <p>Professional end-of-tenancy and post-construction cleaning services to ensure your property is pristine and ready for new occupants.</p>
                     </div>
                 </a>
-                
+
                 <a href="#tenants" class="service-card-link">
                     <div class="service-card">
                         <div class="service-icon tenants"></div>
@@ -511,7 +264,7 @@
         </div>
     </section>
 
-    <!-- Tenants Section -->
+    <!-- Tenants -->
     <section id="tenants" class="service-detail">
         <div class="container">
             <div class="service-detail-content">
@@ -519,11 +272,14 @@
                     <h3>Tenants</h3>
                     <h4>A Hassle-Free Renting Experience Tailored to Your Needs</h4>
                     <p>As housing costs rise, more young professionals and students are discovering the benefits of shared accommodations. With shared living, you can save money while enjoying a balanced lifestyle, ensuring you still have room in your budget for the things you love.</p>
-                    <div style="margin-top: 2rem;">
-                        <img src="./images/property-6.jpg" 
-                             alt="Happy tenants in modern accommodation" 
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
-                             onerror="this.src='https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <div style="margin-top:2rem;">
+                        <img
+                            src="./images/property-6.jpg"
+                            alt="Happy tenants in modern accommodation"
+                            loading="lazy"
+                            style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+                            onerror="this.src='https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                        />
                     </div>
                 </div>
                 <div class="process-steps">
@@ -543,7 +299,7 @@
         </div>
     </section>
 
-    <!-- Property Management Section -->
+    <!-- Property Management -->
     <section id="property-management" class="service-detail">
         <div class="container">
             <div class="service-detail-content">
@@ -551,11 +307,14 @@
                     <h3>Property Management</h3>
                     <h4>Expert Property Management Services</h4>
                     <p>Trust, Care, and Complete Peace of Mind. We're dedicated to making property ownership stress-free and profitable. We specialize in residential and HMO properties and offer comprehensive property management.</p>
-                    <div style="margin-top: 2rem;">
-                        <img src="./images/property-1.jpg" 
-                             alt="Modern managed property exterior" 
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
-                             onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <div style="margin-top:2rem;">
+                        <img
+                            src="./images/property-1.jpg"
+                            alt="Modern managed property exterior"
+                            loading="lazy"
+                            style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+                            onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                        />
                     </div>
                 </div>
                 <div class="process-steps">
@@ -573,7 +332,7 @@
         </div>
     </section>
 
-    <!-- International Students Section -->
+    <!-- International Students -->
     <section id="international-students" class="service-detail">
         <div class="container">
             <div class="service-detail-content">
@@ -581,11 +340,14 @@
                     <h3>International Students</h3>
                     <h4>Finding a Home in the UK: Easy and Secure</h4>
                     <p>Embarking on your studies in the UK is thrilling, and we make finding your home easy, comfortable, and secure. Our accommodation services ensure that from the moment you arrive, your housing needs are fully covered.</p>
-                    <div style="margin-top: 2rem;">
-                        <img src="./images/property-2.jpg" 
-                             alt="Student accommodation and study area" 
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
-                             onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <div style="margin-top:2rem;">
+                        <img
+                            src="./images/property-2.jpg"
+                            alt="Student accommodation and study area"
+                            loading="lazy"
+                            style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+                            onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                        />
                     </div>
                 </div>
                 <div class="process-steps">
@@ -604,7 +366,7 @@
         </div>
     </section>
 
-    <!-- HMO Services Section -->
+    <!-- HMO Services -->
     <section id="hmo-services" class="service-detail">
         <div class="container">
             <div class="service-detail-content">
@@ -612,11 +374,14 @@
                     <h3>HMO Services</h3>
                     <h4>Expand Your Portfolio with Expert HMO Management</h4>
                     <p>Managing an HMO can be rewarding yet demanding. We bring substantial expertise in property management, helping landlords maximize their rental returns while minimizing the time and stress involved.</p>
-                    <div style="margin-top: 2rem;">
-                        <img src="./images/property-3.jpg" 
-                             alt="Shared living space in HMO property" 
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
-                             onerror="this.src='https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <div style="margin-top:2rem;">
+                        <img
+                            src="./images/property-3.jpg"
+                            alt="Shared living space in HMO property"
+                            loading="lazy"
+                            style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+                            onerror="this.src='https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                        />
                     </div>
                 </div>
                 <div class="process-steps">
@@ -635,7 +400,7 @@
         </div>
     </section>
 
-    <!-- Guaranteed Rent Section -->
+    <!-- Guaranteed Rent -->
     <section id="guaranteed-rent" class="service-detail">
         <div class="container">
             <div class="service-detail-content">
@@ -643,51 +408,29 @@
                     <h3>Guaranteed Rent</h3>
                     <h4>Enjoy Stress-Free Income on Your Property, Every Month</h4>
                     <p>Are you a landlord looking for secure, consistent rental income? We lease your property directly, becoming your tenant and ensuring you a fixed rental income every month.</p>
-                    <div style="margin-top: 2rem;">
-                        <img src="./images/property-4.jpg" 
-                             alt="Quality managed property with guaranteed rental income" 
-                             style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"
-                             onerror="this.src='https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <div style="margin-top:2rem;">
+                        <img
+                            src="./images/property-4.jpg"
+                            alt="Quality managed property with guaranteed rental income"
+                            loading="lazy"
+                            style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+                            onerror="this.src='https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                        />
                     </div>
                 </div>
                 <div class="process-steps">
                     <h4>Our 5-Step Process:</h4>
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div>
-                            <strong>Property Viewing:</strong> We arrange to view your property and agree on a fixed monthly rental amount.
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div>
-                            <strong>Agreement Signing:</strong> We finalize a legally binding contract, drawn up by our expert solicitors.
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div>
-                            <strong>Property Setup:</strong> We handle upgrades, find tenants, and take over full property management.
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div>
-                            <strong>Monthly Income:</strong> You start receiving guaranteed rent each month, hassle-free.
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">5</div>
-                        <div>
-                            <strong>Contract Options:</strong> Renew, receive property back improved, or explore purchase options.
-                        </div>
-                    </div>
+                    <div class="step"><div class="step-number">1</div><div><strong>Property Viewing:</strong> We arrange to view your property and agree on a fixed monthly rental amount.</div></div>
+                    <div class="step"><div class="step-number">2</div><div><strong>Agreement Signing:</strong> We finalize a legally binding contract, drawn up by our expert solicitors.</div></div>
+                    <div class="step"><div class="step-number">3</div><div><strong>Property Setup:</strong> We handle upgrades, find tenants, and take over full property management.</div></div>
+                    <div class="step"><div class="step-number">4</div><div><strong>Monthly Income:</strong> You start receiving guaranteed rent each month, hassle-free.</div></div>
+                    <div class="step"><div class="step-number">5</div><div><strong>Contract Options:</strong> Renew, receive property back improved, or explore purchase options.</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cleaning Services Section -->
+    <!-- Cleaning Services -->
     <section id="cleaning-services" class="service-detail">
         <div class="container">
             <div class="service-detail-content">
@@ -695,7 +438,19 @@
                     <h3>Cleaning Services</h3>
                     <h4>Professional Cleaning Solutions</h4>
                     <p>Our professional cleaning services ensure your properties are pristine and ready for new occupants, helping you maintain high standards and tenant satisfaction.</p>
+
+                    <!-- Added image block -->
+                    <div style="margin-top:2rem;">
+                        <img
+                            src="./images/property-7.jpg"
+                            alt="Professional cleaning team at work"
+                            loading="lazy"
+                            style="width:100%; height:250px; object-fit:cover; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);"
+                            onerror="this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                        />
+                    </div>
                 </div>
+
                 <div class="process-steps">
                     <h4>Our Cleaning Services:</h4>
                     <ul>
@@ -712,7 +467,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
@@ -723,54 +478,58 @@
                     <p>We pride ourselves on our attention to detail, excellent customer service, and comprehensive support throughout your property journey. Trust GABID REALCOMFORT LTD to be your reliable property partner.</p>
                 </div>
                 <div class="about-image">
-                    <img src="./images/about-us.jpg" 
-                         alt="GABID REALCOMFORT Team" 
-                         style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;"
-                         onerror="this.src='https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                    <img
+                        src="./images/about-us.jpg"
+                        alt="GABID REALCOMFORT Team"
+                        loading="lazy"
+                        style="width:100%; height:300px; object-fit:cover; border-radius:10px;"
+                        onerror="this.src='https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"
+                    />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <h2 class="section-title" style="color:white;">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><strong>Address:</strong><br>1a Highfield Road, Dartford<br>Highfield Road Dartford DA1 2JH</p>
-                    <p><strong>Phone:</strong><br>07985468676</p>
-                    <p><strong>Email:</strong><br>info@gabidrealcomfort.com</p>
-                    
-                    <h3 style="margin-top: 2rem;">Our Services Include:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.3rem 0;">✓ Property Management</li>
-                        <li style="padding: 0.3rem 0;">✓ International Students Support</li>
-                        <li style="padding: 0.3rem 0;">✓ HMO Services</li>
-                        <li style="padding: 0.3rem 0;">✓ Guaranteed Rent Programs</li>
-                        <li style="padding: 0.3rem 0;">✓ Professional Cleaning Services</li>
-                        <li style="padding: 0.3rem 0;">✓ Tenant Support Services</li>
+                    <p><strong>Address:</strong><br/>1a Highfield Road, Dartford<br/>Highfield Road Dartford DA1 2JH</p>
+                    <p><strong>Phone:</strong><br/>07985468676</p>
+                    <p><strong>Email:</strong><br/>info@gabidrealcomfort.com</p>
+
+                    <h3 style="margin-top:2rem;">Our Services Include:</h3>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:.3rem 0;">✓ Property Management</li>
+                        <li style="padding:.3rem 0;">✓ International Students Support</li>
+                        <li style="padding:.3rem 0;">✓ HMO Services</li>
+                        <li style="padding:.3rem 0;">✓ Guaranteed Rent Programs</li>
+                        <li style="padding:.3rem 0;">✓ Professional Cleaning Services</li>
+                        <li style="padding:.3rem 0;">✓ Tenant Support Services</li>
                     </ul>
                 </div>
+
                 <div class="contact-form">
                     <h3>Send us a message</h3>
                     <form>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required />
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="phone" />
                         </div>
                         <div class="form-group">
                             <label for="service">Service Interested In</label>
-                            <select id="service" name="service" style="width: 100%; padding: 10px; border: none; border-radius: 5px; background: rgba(255,255,255,0.9);">
+                            <select id="service" name="service" style="width:100%; padding:10px; border:none; border-radius:5px; background:rgba(255,255,255,0.9);">
                                 <option value="">Select a service</option>
                                 <option value="property-management">Property Management</option>
                                 <option value="international-students">International Students</option>
@@ -784,7 +543,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
                         </div>
-                        <button type="submit" class="cta-button" style="width: 100%; margin-top: 1rem;">Send Message</button>
+                        <button type="submit" class="cta-button" style="width:100%; margin-top:1rem;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -799,34 +558,25 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', e => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Simple form handler
+        document.querySelector('form').addEventListener('submit', e => {
             e.preventDefault();
             alert('Thank you for your message! We will get back to you soon.');
         });
 
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
+        // Header transparency on scroll
+        window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(44, 62, 80, 0.95)';
-            } else {
-                header.style.background = '#2c3e50';
-            }
+            header.style.background = window.scrollY > 100 ? 'rgba(44,62,80,0.95)' : '#2c3e50';
         });
     </script>
 </body>
