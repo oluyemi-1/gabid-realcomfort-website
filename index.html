@@ -25,9 +25,28 @@
             top: 0; z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-
         .header-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #27ae60; }
+
+        /* Logo block (image + text) */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 48px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+        .brand-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #27ae60;
+            letter-spacing: .3px;
+        }
+        @media (max-width: 640px){ .brand-text { display:none; } }
 
         nav ul { list-style: none; display: flex; gap: 2rem; }
         nav a { color: white; text-decoration: none; transition: color 0.3s; }
@@ -179,7 +198,18 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">GABID REALCOMFORT LTD</div>
+                <!-- LOGO (image + text) -->
+                <a href="#home" class="logo" aria-label="GABID REALCOMFORT LTD">
+                    <img
+                        src="./images/logo.png"
+                        alt="GABID REALCOMFORT LTD logo"
+                        class="logo-img"
+                        width="160" height="48"
+                        onerror="this.style.display='none';"
+                    />
+                    <span class="brand-text">GABID REALCOMFORT LTD</span>
+                </a>
+
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -439,7 +469,6 @@
                     <h4>Professional Cleaning Solutions</h4>
                     <p>Our professional cleaning services ensure your properties are pristine and ready for new occupants, helping you maintain high standards and tenant satisfaction.</p>
 
-                    <!-- Added image block -->
                     <div style="margin-top:2rem;">
                         <img
                             src="./images/property-7.jpg"
